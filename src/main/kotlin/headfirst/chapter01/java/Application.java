@@ -1,4 +1,4 @@
-package chapter01.java;
+package headfirst.chapter01.java;
 
  class Application {
     public static void main(String[] args) {

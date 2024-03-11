@@ -1,4 +1,4 @@
-package chapter01.java;
+package headfirst.chapter01.java;
 
  public interface FlyBehavior {
      void fly();

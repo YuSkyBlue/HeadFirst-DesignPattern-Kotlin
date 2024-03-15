@@ -3,6 +3,7 @@ package headfirst.chapter02.java;
 import java.util.ArrayList;
 import java.util.List;
 
+/** 온도 습도 기압을 추적*/
 public class WeatherData implements Subject{
     private List<Observer> observers;
     private float temperature;
@@ -12,7 +13,12 @@ public class WeatherData implements Subject{
     public WeatherData() {
         this.observers = new ArrayList<>();
     }
-
+    public void setMeasurements(float temperature, float humidity, float pressure) {
+        this.temperature = temperature;
+        this.humidity = humidity;
+        this.pressure = pressure;
+        measurementsChanged();
+    }
     @Override
     public void registerObserver(Observer o) {
         observers.add(o);
@@ -30,14 +36,9 @@ public class WeatherData implements Subject{
         }
     }
 
-    public void measurementsChanged() {
+     void measurementsChanged() {
         notifyObservers();
     }
 
-    public void setMeasurements(float temperature, float humidity, float pressure) {
-        this.temperature = temperature;
-        this.humidity = humidity;
-        this.pressure = pressure;
-        measurementsChanged();
-    }
+
 }

@@ -10,16 +10,16 @@ public class ConditionDisplay implements Observer, DisplayElement{
         this.weatherData = weatherData;
         weatherData.registerObserver(this);
     }
-
-    @Override
-    public void display() {
-        System.out.println("now temp: " + temperature + ", 습도: " + humidity);
-    }
-
     @Override
     public void update(float temp, float humidity, float pressure) {
         this.temperature = temp;
         this.humidity = humidity;
         display();
     }
+    @Override
+    public void display() {
+        System.out.println("now temp: " + temperature + ", 습도: " + humidity);
+    }
+
+
 }
